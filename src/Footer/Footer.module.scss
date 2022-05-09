@@ -1,0 +1,53 @@
+@import 'src/index';
+
+.FooterWrapper {
+  text-align: center;
+
+  .Footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+
+    .FooterLogo {
+      display: flex;
+    }
+
+    .Col1 {
+
+    }
+    .Col2 {
+
+    }
+    .Col3 {
+
+    }
+
+    .FooterLinks {
+      font-family: 'Gilroy', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 21px;
+      /* identical to box height */
+
+      text-transform: uppercase;
+      @include black;
+      padding-bottom: 20px;
+      text-align: left;
+    }
+  }
+}
+
+.AllRight {
+  font-family: 'Gilroy', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+
+  text-transform: uppercase;
+
+  color: #848484;
+  padding-bottom: 50px;
+}

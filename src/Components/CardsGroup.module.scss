@@ -1,0 +1,71 @@
+@import "./src/index";
+
+//* {
+//  border: 1px solid black;
+//}
+
+.CardsWrapper {
+  .CardsGroup {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+
+    .CardsBody {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+
+      width: 245px;
+      height: 326px;
+      border-radius: 20px;
+      background-color: #fff;
+      //text-align: center;
+      //padding-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+      transition: 0.5s;
+      z-index: 2;
+
+      .CardsTitle {
+        font-family: Manrope, sans-serif;
+        @include black;
+        font-size: 18px;
+        font-weight: 300;
+        transition: 1s;
+        padding-top: 5px;
+        margin: 5px;
+        text-align: center;
+      }
+    }
+    .CardsBody:hover {
+      width: 245px;
+      height: 326px;
+      border-radius: 20px;
+      background-color: #fff;
+      text-align: center;
+      padding-bottom: 20px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+      z-index: 2;
+      color: #EF7954;
+      transition: 0.5s;
+      transform: scale(1.05);
+
+      .CardsTitle {
+        font-family: Manrope, sans-serif;
+        color: #EF7954;
+        font-size: 18px;
+        font-weight: 400;
+        transition: 0.5s;
+      }
+    }
+    //
+    //.CardsTitle:hover {
+    //  font-family: Manrope, sans-serif;
+    //  color: #EF7954;
+    //  font-size: 18px;
+    //  font-weight: 400;
+    //  transition: 0.5s;
+    //}
+  }
+}
