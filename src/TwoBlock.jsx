@@ -1,6 +1,5 @@
 import React from 'react'
 import classes from './styles.module.scss'
-// import AutoplaySlider from "react-awesome-slider";
 import 'react-awesome-slider/dist/styles.css';
 import AwesomeSlider from "react-awesome-slider";
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
@@ -12,17 +11,16 @@ export const TwoBlock = () => {
     return (
         <div className={classes.TwoBlock}>
             <Title text="Конвейерное оборудование:"/>
-
             <div className={classes.ImageGallery}>
                 <AutoplaySlider
                     play={true}
                     cancelOnInteraction={true}
                     interval={3000}
                     >
-                    <div data-src="/images/1.png" />
-                    <div data-src="/images/2.png" />
-                    <div data-src="/images/3.png" />
-                    <div data-src="/images/4.png" />
+                    <div className={classes.gimg} data-src="/images/1.png" />
+                    <div className={classes.gimg} data-src="/images/2.png" />
+                    <div className={classes.gimg} data-src="/images/3.png" />
+                    <div className={classes.gimg} data-src="/images/4.png" />
                 </AutoplaySlider>
             </div>
 

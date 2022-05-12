@@ -1,4 +1,10 @@
 @import "src/index";
+@import "~breakpoint-sass";
+
+$bk-desktop: 1440px;
+$bk-table-landscape: 1085px 811px;
+$bk-table: 811px 611px;
+$bk-phone: 611px 0px;
 
 header {
   margin-top: 68px;
@@ -11,7 +17,31 @@ header {
   height: 46px;
   max-width: 1300px;
 
+  .Online {
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 10px;
+    background: #A8FFAB;
+    position: absolute;
+    top: 0;
+    right: -20px;
+  }
+
+  .LogoImg {
+    width: 150px;
+    height: 42px;
+    @include breakpoint($bk-phone) {
+      width: 250px;
+      height: 74px;
+    }
+  }
+
   .linkStyle {
+    @include breakpoint($bk-phone) {
+      display: none;
+    }
     font-size: 18px;
     @include black;
     text-decoration: none;

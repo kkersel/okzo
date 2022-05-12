@@ -12,42 +12,42 @@ export const IconsCard = () => {
                 </div>
 
                 <div className={a.CardsBody}>
-                    <img src="/images/image 14 (Traced).png"/>
+                    <img className={a.Icons} src="/images/image 14 (Traced).png"/>
                     <p className={a.CardsTitle}>Птицепереработка</p>
                 </div>
 
                 <div className={a.CardsBody}>
-                    <img src="/images/image 15 (Traced).png"/>
+                    <img className={a.Icons} src="/images/image 15 (Traced).png"/>
                     <p className={a.CardsTitle}>Морепродукты</p>
                 </div>
 
                 <div className={a.CardsBody}>
-                    <img src="/images/image 16 (Traced).png"/>
+                    <img className={a.Icons} src="/images/image 16 (Traced).png"/>
                     <p className={a.CardsTitle}>Обжарка семечек</p>
                 </div>
             </div>
 
             <div className={a.CardsGroup}>
                 <div className={a.CardsBody}>
-                    <img src="/images/image 17 (Traced).png"/>
+                    <img className={a.Icons} src="/images/image 17 (Traced).png"/>
                     <p className={a.CardsTitle}>Конвейер ленточный
                         “собери сам”</p>
                 </div>
 
                 <div className={a.CardsBody}>
-                    <img src="/images/image 18 (Traced).png"/>
+                    <img className={a.Icons} src="/images/image 18 (Traced).png"/>
                     <p className={a.CardsTitle}>Автоматизированные
                         складные системы</p>
                 </div>
 
                 <div className={a.CardsBody}>
-                    <img src="/images/image 19 (Traced).png"/>
+                    <img className={a.Icons} src="/images/image 19 (Traced).png"/>
                     <p className={a.CardsTitle}>Сопутствующее
                         оборудование</p>
                 </div>
 
                 <div className={a.CardsBody}>
-                    <img src="/images/image 20 (Traced).png"/>
+                    <img className={a.Icons} src="/images/image 20 (Traced).png"/>
                     <p className={a.CardsTitle}>Конвейнер для суши</p>
                 </div>
             </div>

@@ -1,8 +1,10 @@
 @import "index";
+@import "~breakpoint-sass";
 
-.text {
-  color: red;
-}
+$bk-desktop: 1440px;
+$bk-table-landscape: 1085px 811px;
+$bk-table: 811px 611px;
+$bk-phone: 1000px 0px;
 
 .ConImg {
   height: 452px;
@@ -19,12 +21,22 @@
   display: flex;
   margin-top: 55px;
 
+  @include breakpoint($bk-phone) {
+    margin-top: 0;
+    .Right {
+      display: none;
+    }
+  }
+
   .Title {
     font-family: Gilroy, sans-serif;
     font-size: 48px;
     font-weight: 500;
     @include black;
     margin-top: 40px;
+    @include breakpoint($bk-phone) {
+      font-size: 30px;
+    }
   }
 
   .TitleOrange {
@@ -34,6 +46,9 @@
     color: #EF7954;
     padding: 0;
     margin: 0;
+    @include breakpoint($bk-phone) {
+      font-size: 30px;
+    }
   }
 
   .Subtitle {
@@ -41,34 +56,51 @@
     font-size: 48px;
     font-weight: 400;
     margin-top: 40px;
+    @include black;
+    @include breakpoint($bk-phone) {
+      font-size: 30px;
+    }
   }
 }
 
 .TwoBlock {
-
   .ImageGallery {
-    width: 1300px;
+    width: 100%;
     height: 480px;
     border-radius: 20px;
     background: #000;
     position: relative;
+    @include breakpoint($bk-phone) {
+      height: 250px;
+    }
   }
 }
 
 
 //ПОЧЕМУ МЫ?
 .ThreeBlock {
-  .CardsGroupThree {
+  .CardsWrapperThree {
+    @include breakpoint($bk-phone) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+    }
     display: flex;
     justify-content: space-between;
 
+    // Внутри блока
     .CardsBodyThree {
+      @include breakpoint($bk-phone) {
+        width: 180px;
+        height: 200px;
+        margin: 8px;
+      }
       display: flex;
       flex-flow: column;
       justify-content: center;
 
       width: 245px;
-      height: 303px;
+      height: 240px;
       border-radius: 20px;
       background-color: #fff;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -78,10 +110,21 @@
       .Body {
         display: flex;
         flex-flow: column;
-        justify-content: space-between;
         align-items: center;
 
+        .IconsThree {
+          @include breakpoint($bk-phone) {
+            width: 50px;
+            height: 50px;
+          }
+          width: 75px;
+          height: 75px;
+        }
+
         .CardsTitle {
+          @include breakpoint($bk-phone) {
+            font-size: 16px;
+          }
           font-family: Manrope, sans-serif;
           @include black;
           font-size: 18px;
@@ -89,35 +132,19 @@
           transition: 1s;
           margin-top: 40px;
           text-align: center;
-          max-width: 180px;
+          max-width: 220px;
         }
-      }
-
-      .icons {
-        width: 75px;
-        height: 75px;
       }
     }
 
+    // Анимация
     .CardsBodyThree:hover {
-      width: 245px;
-      height: 303px;
-      border-radius: 20px;
-      background-color: #fff;
-      text-align: center;
-      padding-bottom: 20px;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-      z-index: 2;
-      color: #EF7954;
       transition: 0.5s;
       transform: scale(1.05);
       cursor: pointer;
 
       .CardsTitle {
-        font-family: Manrope, sans-serif;
         color: #EF7954;
-        font-size: 18px;
-        font-weight: 400;
         transition: 0.5s;
       }
     }
@@ -128,7 +155,13 @@
 .FourBlock {
   .CardsWrapper {
     display: flex;
-
+    justify-content: space-between;
+    margin: 0;
+    @include breakpoint($bk-phone) {
+      flex-flow: column;
+      align-items: center;
+    }
+    //info
     .InfoCardsWrapper {
       display: flex;
       flex-flow: column;
@@ -149,6 +182,10 @@
       }
 
       .InfoCardsTitle {
+        @include breakpoint($bk-phone) {
+          min-width: 280px;
+          margin-top: 20px;
+        }
         width: 191px;
         font-family: Manrope, sans-serif;
         @include black;
@@ -159,13 +196,20 @@
         margin-top: 40px;
       }
 
-      width: 245px;
+      width: 265px;
       height: 490px;
       border-radius: 20px;
       background: #fff;
+      @include breakpoint($bk-phone) {
+        min-width: 360px;
+        height: 360px;
+      }
     }
 
     .CardsTitle {
+      @include breakpoint($bk-phone) {
+        font-size: 16px;
+      }
       font-family: Manrope, sans-serif;
       @include black;
       font-size: 18px;
@@ -175,23 +219,41 @@
       margin-top: 20px;
     }
 
+
+    //right
     .MiniCardsWrapper {
       margin-left: 120px;
-      width: 907px;
-
-      //Первый ряд
-      .CardsGroupMiniSecond {
+      width: 1000px;
+      @include breakpoint($bk-phone) {
         display: flex;
-        justify-content: space-between;
-        margin-top: 40px;
+        justify-content: center;
+        margin: 0;
+        padding-top: 40px;
+        width: auto;
+        .CardsGroupMini {
+          display: flex;
+          flex-flow: column;
+        }
       }
 
       .CardsGroupMini {
         display: flex;
         justify-content: space-between;
+        padding: 0 0 40px 0;
+        @include breakpoint($bk-phone) {
+          padding: 0;}
       }
 
       .CardsBody {
+        @include breakpoint($bk-phone) {
+          width: 180px;
+          height: 240px;
+          margin: 8px;
+          .Icons {
+            width: 180px;
+            height: 150px;
+          }
+        }
         width: 245px;
         height: 225px;
         border-radius: 20px;
@@ -201,12 +263,8 @@
         cursor: pointer;
       }
 
+      // Анимация
       .CardsBody:hover {
-        width: 245px;
-        height: 225px;
-        border-radius: 20px;
-        background-color: #fff;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
         transition: 0.5s;
         transform: scale(1.05);
         cursor: pointer;
@@ -218,9 +276,16 @@
 
 //КОНТАКТЫ
 .FiveBlock {
-  padding-bottom: 100px;
-  //box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  .Map {
+    height: 50vh;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    @include breakpoint($bk-phone) {
+      height: 200px;
+    }
+  }
 
+  padding-bottom: 100px;
 
   .ContactWrapper {
     height: 100%;
@@ -228,14 +293,20 @@
     background: #fff;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    //z-index: 4;
     position: relative;
 
     .Contact {
+      @include breakpoint($bk-phone) {
+        padding: 40px 40px 40px 40px;
+      }
       padding: 40px 71px 40px 71px;
       display: flex;
       justify-content: space-between;
-      z-index: 4;
+
+      @include breakpoint($bk-phone) {
+        display: flex;
+        flex-flow: column;
+      }
 
       .LastTitle {
         font-family: Manrope, sans-serif;
@@ -245,7 +316,6 @@
         transition: 1s;
         text-align: left;
         padding: 10px 0 0 0;
-
       }
 
       .Information {
@@ -257,7 +327,6 @@
         padding: 10px 0 0 0;
         text-align: left;
         text-decoration: none;
-
       }
 
       .Left {
@@ -276,10 +345,20 @@
           justify-content: space-between;
           width: 472px;
           padding: 26px 0 17px 0;
+          @include breakpoint($bk-phone) {
+            display: flex;
+            justify-content: space-between;
+            max-width: 300px;
+          }
 
           .IconSocialMedia {
             height: 64px;
             width: 64px;
+
+            @include breakpoint($bk-phone) {
+              height: 50px;
+              width: 50px;
+            }
           }
         }
       }
@@ -296,33 +375,32 @@
 
 //НАМ ДОВЕРЯЮТ
 .SixBlock {
+  display: grid;
+  justify-content: center;
   .Collabs {
     display: flex;
     justify-content: center;
-    margin-top: 150px;
-
-    .OneLine {
-      //display: flex;
-      //justify-content: space-between;
-      margin-top: 100px;
+    @include breakpoint($bk-phone) {
+      display: none;
     }
+  }
 
-    .TwoLine {
-      margin-top: 40px;
-      //display: flex;
-      //justify-content: space-between;
-    }
-
-    .CompamyImg {
-      //height: 45px;
-      //width: 218px;
-      image-rendering: high-quality;
-      image-resolution: normal;
+  .CMobile {
+    display: none;
+    @include breakpoint($bk-phone) {
+      display: flex;
+      justify-content: center;
+      width: 360px;
+      height: 900px;
     }
   }
 
   .TitleBuble {
-    //padding-bottom: 100px;
+    @include breakpoint($bk-phone) {
+      margin: 20px 0 20px 0;
+      padding-bottom: 40px;
+    }
+    padding-bottom: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -330,6 +408,9 @@
     z-index: 0;
 
     .BubleBuble {
+      @include breakpoint($bk-phone) {
+        display: none;
+      }
       height: 169px;
       width: 178px;
       position: absolute;
@@ -348,9 +429,21 @@
 
 //ОБРАТНЫЙ ЗВОНОК
 .SevenBlock {
+  display: grid;
+  justify-content: center;
   padding-bottom: 100px;
+  @include breakpoint($bk-phone) {
+    padding-bottom: 40px;
+  }
 
   .BringWrapper {
+    @include breakpoint($bk-phone) {
+      width: 360px;
+      display: flex;
+      flex-flow: column;
+      height: 500px;
+      background-image: none;
+    }
     width: 1300px;
     height: 314px;
     border-radius: 20px;
@@ -363,6 +456,9 @@
 
     .BringBlock {
       padding: 40px 0 20px 71px;
+      @include breakpoint($bk-phone) {
+        padding: 40px 40px 40px 32px;
+      }
 
       .FormStyle {
 
@@ -407,8 +503,11 @@
         }
 
         .InputWrapper {
+          @include breakpoint($bk-phone) {
+            display: flex;
+            flex-flow: column;
+          }
           display: flex;
-          //justify-content: space-between;
           max-width: 800px;
 
           .PutStyle {
@@ -426,6 +525,9 @@
             font-size: 18px;
             font-weight: 400;
             @include black;
+            @include breakpoint($bk-phone) {
+              margin-bottom: 20px;
+            }
           }
 
           .button {

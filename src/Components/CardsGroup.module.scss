@@ -1,16 +1,38 @@
 @import "./src/index";
+@import "~breakpoint-sass";
 
-//* {
-//  border: 1px solid black;
-//}
+$bk-desktop: 1440px;
+$bk-table-landscape: 1085px 811px;
+$bk-table: 811px 611px;
+$bk-phone: 611px 0px;
 
 .CardsWrapper {
+  @include breakpoint($bk-phone) {
+    display: flex;
+    justify-content: center;
+    .CardsGroup {
+      display: flex;
+      flex-flow: column;
+      padding-top: 240px;
+    }
+  }
+
   .CardsGroup {
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
+    max-width: 100%;
 
     .CardsBody {
+      @include breakpoint($bk-phone) {
+        width: 180px;
+        height: 240px;
+        margin: 8px;
+        .Icons {
+          width: 150px;
+          height: 150px;
+        }
+      }
       display: flex;
       flex-flow: column;
       justify-content: center;
@@ -18,16 +40,22 @@
       align-content: center;
 
       width: 245px;
-      height: 326px;
+      height: 280px;
       border-radius: 20px;
       background-color: #fff;
-      //text-align: center;
-      //padding-bottom: 20px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
       transition: 0.5s;
       z-index: 2;
 
+      .Icons {
+        width: 180px;
+        height: 180px;
+      }
+
       .CardsTitle {
+        @include breakpoint($bk-phone) {
+          font-size: 16px;
+        }
         font-family: Manrope, sans-serif;
         @include black;
         font-size: 18px;
@@ -38,34 +66,17 @@
         text-align: center;
       }
     }
+
     .CardsBody:hover {
-      width: 245px;
-      height: 326px;
-      border-radius: 20px;
-      background-color: #fff;
-      text-align: center;
-      padding-bottom: 20px;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-      z-index: 2;
       color: #EF7954;
       transition: 0.5s;
       transform: scale(1.05);
 
       .CardsTitle {
-        font-family: Manrope, sans-serif;
         color: #EF7954;
         font-size: 18px;
-        font-weight: 400;
         transition: 0.5s;
       }
     }
-    //
-    //.CardsTitle:hover {
-    //  font-family: Manrope, sans-serif;
-    //  color: #EF7954;
-    //  font-size: 18px;
-    //  font-weight: 400;
-    //  transition: 0.5s;
-    //}
   }
 }

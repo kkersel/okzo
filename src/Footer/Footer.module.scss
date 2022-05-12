@@ -1,7 +1,20 @@
 @import 'src/index';
+@import "~breakpoint-sass";
+
+$bk-desktop: 1440px;
+$bk-table-landscape: 1085px 811px;
+$bk-table: 811px 611px;
+$bk-phone: 1000px 0px;
+
 
 .FooterWrapper {
-  text-align: center;
+  @include breakpoint($bk-phone) {
+    .Footer {
+      display: flex;
+      flex-flow: column;
+      margin: 40px 0;
+    }
+  }
 
   .Footer {
     display: flex;
@@ -9,20 +22,18 @@
     margin: 40px 0;
 
     .FooterLogo {
+      @include breakpoint($bk-phone) {
+        display: none;
+      }
       display: flex;
-    }
-
-    .Col1 {
-
-    }
-    .Col2 {
-
-    }
-    .Col3 {
-
+      width: 150px;
+      height: 42px;
     }
 
     .FooterLinks {
+      @include breakpoint($bk-phone) {
+        text-align: center;
+      }
       font-family: 'Gilroy', sans-serif;
       font-style: normal;
       font-weight: 400;
@@ -50,4 +61,5 @@
 
   color: #848484;
   padding-bottom: 50px;
+  text-align: center;
 }

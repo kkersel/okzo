@@ -15,7 +15,7 @@ export const Footer = () => {
                     <p className={classes.FooterLinks}>
                         ИНН: 7716558624
                     </p>
-                    <img className={classes.FooterLogo} src="/images/Logo.png"/>
+                    <img className={classes.FooterLogo} src="/images/Logo2.png"/>
                 </div>
                 <div className={classes.Col2}>
                     <p className={classes.FooterLinks}>-Конвейер ленточный</p>

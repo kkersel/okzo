@@ -7,6 +7,7 @@ export const FiveBlock = () => {
     return (
         <div className={classes.FiveBlock}>
             <Title text="Контакты:"/>
+
             <div className={classes.ContactWrapper}>
                 {/*aga*/}
                 <div className={classes.Contact}>

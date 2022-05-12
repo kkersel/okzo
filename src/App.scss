@@ -1,3 +1,9 @@
+@import "~breakpoint-sass";
+$bk-desktop: 1440px;
+$bk-table-landscape: 1085px 811px;
+$bk-table: 811px 611px;
+$bk-phone: 611px 0px;
+
 body {
   padding: 0;
   margin: 0;
@@ -12,4 +18,13 @@ body {
 
 .MainWrapper {
   max-width: 1300px;
+  @include breakpoint($bk-table-landscape) {
+    max-width: 800px;
+  }
+  @include breakpoint($bk-table) {
+    max-width: 600px;
+  }
+  @include breakpoint($bk-phone) {
+    width: 360px;
+  }
 }

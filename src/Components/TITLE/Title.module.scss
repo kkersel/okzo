@@ -1,14 +1,25 @@
 @import "src/index";
+@import "~breakpoint-sass";
+
+$bk-desktop: 1440px;
+$bk-table-landscape: 1085px 811px;
+$bk-table: 811px 611px;
+$bk-phone: 1000px 0px;
+
+
 .Title {
   //padding-bottom: 100px;
   margin: 77px 0 40px 0;
   z-index: 0;
 
   .Buble {
+    @include breakpoint($bk-phone){
+      display: none;
+    }
     height: 169px;
     width: 178px;
     position: absolute;
-    left: 13%;
+    left: -4%;
     margin-top: -60px;
   }
 
@@ -19,5 +30,6 @@
     font-family: Gilroy, sans-serif;
     font-weight: 600;
     text-transform: uppercase;
+    z-index: 1;
   }
 }
