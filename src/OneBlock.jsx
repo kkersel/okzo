@@ -3,6 +3,7 @@ import classes from "./styles.module.scss";
 
 export const OneBlock = () => {
     return (
+        //update
         <div className={classes.OneBlock}>
             <div className={classes.Left}>
                 <h1 className={classes.Title}>МЫ – ПРОЕКТНО-ПРОИЗВОДСТВЕННАЯ ФИРМА</h1>
